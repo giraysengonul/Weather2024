@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		C4F7164C2B9361B400F41FFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7164B2B9361B400F41FFD /* AppDelegate.swift */; };
 		C4F7164E2B9361B400F41FFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7164D2B9361B400F41FFD /* SceneDelegate.swift */; };
-		C4F716502B9361B400F41FFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7164F2B9361B400F41FFD /* ViewController.swift */; };
+		C4F716502B9361B400F41FFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7164F2B9361B400F41FFD /* MainViewController.swift */; };
 		C4F716552B9361B900F41FFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F716542B9361B900F41FFD /* Assets.xcassets */; };
 		C4F716582B9361B900F41FFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F716562B9361B900F41FFD /* LaunchScreen.storyboard */; };
+		C4F7166B2B93664700F41FFD /* WAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7166A2B93664700F41FFD /* WAPIClient.swift */; };
+		C4F7166D2B93665A00F41FFD /* WEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7166C2B93665A00F41FFD /* WEndpoint.swift */; };
+		C4F7166F2B93673200F41FFD /* WNetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F7166E2B93673200F41FFD /* WNetworkLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C4F716482B9361B400F41FFD /* Weather2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4F7164B2B9361B400F41FFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4F7164D2B9361B400F41FFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C4F7164F2B9361B400F41FFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4F7164F2B9361B400F41FFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C4F716542B9361B900F41FFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4F716572B9361B900F41FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4F716592B9361B900F41FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4F7166A2B93664700F41FFD /* WAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAPIClient.swift; sourceTree = "<group>"; };
+		C4F7166C2B93665A00F41FFD /* WEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEndpoint.swift; sourceTree = "<group>"; };
+		C4F7166E2B93673200F41FFD /* WNetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WNetworkLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,105 @@
 		C4F7164A2B9361B400F41FFD /* Weather2024 */ = {
 			isa = PBXGroup;
 			children = (
-				C4F7164B2B9361B400F41FFD /* AppDelegate.swift */,
-				C4F7164D2B9361B400F41FFD /* SceneDelegate.swift */,
-				C4F7164F2B9361B400F41FFD /* ViewController.swift */,
-				C4F716542B9361B900F41FFD /* Assets.xcassets */,
-				C4F716562B9361B900F41FFD /* LaunchScreen.storyboard */,
+				C4F716672B93658600F41FFD /* SupportingFiles */,
+				C4F716662B93636100F41FFD /* Services */,
+				C4F716652B93635C00F41FFD /* Networking */,
+				C4F716642B93635500F41FFD /* ViewModels */,
+				C4F716632B93635000F41FFD /* Views */,
+				C4F716622B93634200F41FFD /* Models */,
+				C4F716612B93633D00F41FFD /* Common */,
+				C4F716602B93633800F41FFD /* Controllers */,
+				C4F7165F2B93633200F41FFD /* Resources */,
 				C4F716592B9361B900F41FFD /* Info.plist */,
 			);
 			path = Weather2024;
+			sourceTree = "<group>";
+		};
+		C4F7165F2B93633200F41FFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4F716562B9361B900F41FFD /* LaunchScreen.storyboard */,
+				C4F716542B9361B900F41FFD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C4F716602B93633800F41FFD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4F716682B9365F300F41FFD /* Core */,
+				C4F716692B9365F800F41FFD /* Other */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4F716612B93633D00F41FFD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C4F716622B93634200F41FFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4F716632B93635000F41FFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4F716642B93635500F41FFD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C4F716652B93635C00F41FFD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7166A2B93664700F41FFD /* WAPIClient.swift */,
+				C4F7166C2B93665A00F41FFD /* WEndpoint.swift */,
+				C4F7166E2B93673200F41FFD /* WNetworkLogger.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C4F716662B93636100F41FFD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C4F716672B93658600F41FFD /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7164D2B9361B400F41FFD /* SceneDelegate.swift */,
+				C4F7164B2B9361B400F41FFD /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		C4F716682B9365F300F41FFD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C4F7164F2B9361B400F41FFD /* MainViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C4F716692B9365F800F41FFD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4F716502B9361B400F41FFD /* ViewController.swift in Sources */,
+				C4F716502B9361B400F41FFD /* MainViewController.swift in Sources */,
 				C4F7164C2B9361B400F41FFD /* AppDelegate.swift in Sources */,
+				C4F7166F2B93673200F41FFD /* WNetworkLogger.swift in Sources */,
 				C4F7164E2B9361B400F41FFD /* SceneDelegate.swift in Sources */,
+				C4F7166D2B93665A00F41FFD /* WEndpoint.swift in Sources */,
+				C4F7166B2B93664700F41FFD /* WAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
