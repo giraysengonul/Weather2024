@@ -11,7 +11,7 @@ import Foundation
     //fetchData
     case fetchData
     //locationWeatherFetchData
-    case locationWeatherFetchData(city: String, query: [URLQueryItem]?)
+    case locationWeatherFetchData(query: [URLQueryItem]?)
     
     /// create URL
     private var url: URL{
@@ -19,7 +19,7 @@ import Foundation
             switch self{
             case .fetchData:
                 return URL(string: "aaa")!
-            case .locationWeatherFetchData(_,_):
+            case .locationWeatherFetchData(_):
                 return URL(string: "https://api.collectapi.com/weather")!
             }
         }
@@ -30,7 +30,7 @@ import Foundation
         switch self{
         case .fetchData:
             return ""
-        case .locationWeatherFetchData(_,_):
+        case .locationWeatherFetchData(_):
             return "/getWeather"
         }
     }
@@ -41,7 +41,7 @@ import Foundation
             switch self{
             case .fetchData:
                 return "GET"
-            case .locationWeatherFetchData(_,_):
+            case .locationWeatherFetchData(_):
                 return "GET"
             }
         }
@@ -53,7 +53,7 @@ import Foundation
             switch self{
             case .fetchData:
                 return nil
-            case .locationWeatherFetchData(_, query: let query):
+            case .locationWeatherFetchData(query: let query):
                 return query
             }
         }
@@ -65,7 +65,7 @@ import Foundation
             switch self{
             case .fetchData:
                 return [:]
-            case .locationWeatherFetchData(_,_):
+            case .locationWeatherFetchData(_):
                 return [
                     "content-type":"application/json",
                     "authorization":"apikey 1zp4wLipWiy1GeG0wf4ueT:1sHDkZfQbmdsWyi434bKUk"
