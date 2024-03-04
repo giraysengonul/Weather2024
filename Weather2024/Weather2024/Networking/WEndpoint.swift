@@ -77,22 +77,10 @@ import Foundation
     /// Make Request
     /// - Returns: callback URLRequest
     public func makeRequest() -> URLRequest? {
-        
-        guard var componentUrl = URLComponents(url: (url.appendingPathComponent(path)), resolvingAgainstBaseURL: true) else {
+        guard let queryItem = queryItem else {
             return nil
         }
-        if let queryItem = queryItem{
-            componentUrl.queryItems = queryItem
-        }
-        
-        guard let url = componentUrl.url else{
-            return nil
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = methot
-        request.allHTTPHeaderFields = headers
-        return request
+        return RequestBuilder.createRequest(with: url, headers: headers, path: path, queryItems: queryItem, methot: methot)
     }
-    
     
 }

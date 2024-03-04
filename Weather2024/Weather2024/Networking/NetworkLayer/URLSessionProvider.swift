@@ -8,17 +8,17 @@
 import Foundation
 
 /// Single URLSessionProvider
-class URLSessionProvider {
+final class URLSessionProvider: NetworkingProtocol {
     
     /// Init
-     init() {}
+      init() {}
     
     /// Fetch Data Processing
     /// - Parameters:
     ///   - request: URLRequest
     ///   - completion: Data or URLResponse or Error
     /// - Returns: URLSessionDataTask
-    public func fethData(URLRequest request: URLRequest, completion: @escaping(Data?, URLResponse?, Error? ) -> Void) -> URLSessionDataTask{
+    public func fethData(urlRequest request: URLRequest, completion: @escaping(Data?, URLResponse?, Error? ) -> Void) -> URLSessionDataTask{
         return URLSession.shared.dataTask(with: request, completionHandler: completion)
     }
     

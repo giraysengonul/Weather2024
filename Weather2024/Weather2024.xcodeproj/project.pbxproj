@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4E4BD2D2B95FB510089F677 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4BD2C2B95FB510089F677 /* NetworkingProtocol.swift */; };
+		C4E4BD302B95FCBF0089F677 /* ReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4BD2F2B95FCBF0089F677 /* ReachabilityHelper.swift */; };
+		C4E4BD332B9604560089F677 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4BD322B9604560089F677 /* RequestBuilder.swift */; };
+		C4E4BD352B9607720089F677 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4BD342B9607720089F677 /* WeatherService.swift */; };
+		C4E4BD372B9609AD0089F677 /* ServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E4BD362B9609AD0089F677 /* ServiceProtocols.swift */; };
 		C4E567302B95BEEE00AE0896 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E5672F2B95BEEE00AE0896 /* NetworkError.swift */; };
 		C4E567332B95BF9500AE0896 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E567322B95BF9500AE0896 /* URLSessionProvider.swift */; };
 		C4E567352B95C28C00AE0896 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E567342B95C28C00AE0896 /* APIError.swift */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4E4BD2C2B95FB510089F677 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
+		C4E4BD2F2B95FCBF0089F677 /* ReachabilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHelper.swift; sourceTree = "<group>"; };
+		C4E4BD322B9604560089F677 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		C4E4BD342B9607720089F677 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		C4E4BD362B9609AD0089F677 /* ServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocols.swift; sourceTree = "<group>"; };
 		C4E5672F2B95BEEE00AE0896 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C4E567322B95BF9500AE0896 /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
 		C4E567342B95C28C00AE0896 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -53,6 +63,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4E4BD2B2B95FB360089F677 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C4E4BD2C2B95FB510089F677 /* NetworkingProtocol.swift */,
+				C4E4BD362B9609AD0089F677 /* ServiceProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C4E4BD2E2B95FCB60089F677 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C4E4BD2F2B95FCBF0089F677 /* ReachabilityHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C4E4BD312B9604430089F677 /* RequestBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				C4E4BD322B9604560089F677 /* RequestBuilder.swift */,
+			);
+			path = RequestBuilder;
+			sourceTree = "<group>";
+		};
 		C4E5672E2B95BEE100AE0896 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +168,8 @@
 		C4F716612B93633D00F41FFD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C4E4BD2E2B95FCB60089F677 /* Helpers */,
+				C4E4BD2B2B95FB360089F677 /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -162,12 +199,13 @@
 		C4F716652B93635C00F41FFD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C4E567362B95C6C500AE0896 /* ResponseHandler */,
-				C4E567312B95BF8100AE0896 /* NetworkLayer */,
-				C4E5672E2B95BEE100AE0896 /* Model */,
 				C4F7166A2B93664700F41FFD /* WAPIClient.swift */,
 				C4F7166C2B93665A00F41FFD /* WEndpoint.swift */,
 				C4F7166E2B93673200F41FFD /* WNetworkLogger.swift */,
+				C4E4BD312B9604430089F677 /* RequestBuilder */,
+				C4E567362B95C6C500AE0896 /* ResponseHandler */,
+				C4E567312B95BF8100AE0896 /* NetworkLayer */,
+				C4E5672E2B95BEE100AE0896 /* Model */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -175,6 +213,7 @@
 		C4F716662B93636100F41FFD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C4E4BD342B9607720089F677 /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -273,13 +312,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E4BD352B9607720089F677 /* WeatherService.swift in Sources */,
+				C4E4BD332B9604560089F677 /* RequestBuilder.swift in Sources */,
 				C4F716502B9361B400F41FFD /* MainViewController.swift in Sources */,
+				C4E4BD372B9609AD0089F677 /* ServiceProtocols.swift in Sources */,
 				C4E567332B95BF9500AE0896 /* URLSessionProvider.swift in Sources */,
 				C4E567302B95BEEE00AE0896 /* NetworkError.swift in Sources */,
 				C4F7164C2B9361B400F41FFD /* AppDelegate.swift in Sources */,
+				C4E4BD302B95FCBF0089F677 /* ReachabilityHelper.swift in Sources */,
 				C4F7166F2B93673200F41FFD /* WNetworkLogger.swift in Sources */,
 				C4F7164E2B9361B400F41FFD /* SceneDelegate.swift in Sources */,
 				C4F7166D2B93665A00F41FFD /* WEndpoint.swift in Sources */,
+				C4E4BD2D2B95FB510089F677 /* NetworkingProtocol.swift in Sources */,
 				C4E5673A2B95C6DF00AE0896 /* ResponseError.swift in Sources */,
 				C4F7166B2B93664700F41FFD /* WAPIClient.swift in Sources */,
 				C4E5673C2B95CAE100AE0896 /* ResponseParser.swift in Sources */,

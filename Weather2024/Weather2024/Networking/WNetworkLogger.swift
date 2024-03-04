@@ -17,13 +17,14 @@ final class WNetworkLogger {
     /// URLRequest Log Process
     /// - Parameter request: URLRequest
      public func log(request: URLRequest) {
-        print("Request URL: \(request.url?.absoluteString ?? "")")
-        if let headers = request.allHTTPHeaderFields {
-            print("Request Headers: \(headers)")
-        }
-        if let body = request.httpBody {
-            print("Request Body: \(String(data: body, encoding: .utf8) ?? "")")
-        }
+         print("--> Request URL: \(request.url?.absoluteString ?? "")")
+         print("--> Request Method: \(request.httpMethod ?? "")")
+         if let headers = request.allHTTPHeaderFields {
+             print("--> Request Headers: \(headers)")
+         }
+         if let body = request.httpBody {
+             print("--> Request Body: \(String(data: body, encoding: .utf8) ?? "")")
+         }
     }
     
     /// URLResPonse Process
@@ -38,4 +39,20 @@ final class WNetworkLogger {
             print("Response Data: \(String(data: responseData, encoding: .utf8) ?? "")")
         }
     }
+    
+    /// HTTPURLResponse Processing
+    /// - Parameters:
+    ///   - response: HTTPURLResponse
+    ///   - data: data
+    public func log(httpResponse: HTTPURLResponse?, data: Data?) {
+           if let response = httpResponse {
+               print("<-- Response Status Code: \(response.statusCode)")
+           }
+           if let headers = httpResponse?.allHeaderFields as? [String: String] {
+               print("<-- Response Headers: \(headers)")
+           }
+           if let responseData = data, let responseBody = String(data: responseData, encoding: .utf8) {
+               print("<-- Response Body: \(responseBody)")
+           }
+       }
 }
