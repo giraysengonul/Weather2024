@@ -8,7 +8,7 @@
 import Foundation
 
 /// Create request
-final class RequestBuilder{
+final class APIRequestBuilder{
     
     /// Init
     init() {}

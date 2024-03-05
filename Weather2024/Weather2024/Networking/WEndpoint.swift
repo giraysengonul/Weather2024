@@ -66,12 +66,20 @@ import Foundation
             case .fetchData:
                 return [:]
             case .locationWeatherFetchData(_):
+                guard let apiKey = getAPIKey() else { return [:] }
                 return [
-                    "content-type":"application/json",
-                    "authorization":"apikey 1zp4wLipWiy1GeG0wf4ueT:1sHDkZfQbmdsWyi434bKUk"
+                    "content-type" : "application/json",
+                    "authorization" : apiKey
                 ]
             }
         }
+    }
+    
+    /// GET API KEY
+    /// - Returns: apikey or nil
+    private func getAPIKey() -> String? {
+        guard let apiKeyData = KeychainWrapper.shared.load(key: "APIKEY") else { return nil }
+        return String(data: apiKeyData, encoding: .utf8)
     }
     
     /// Make Request
@@ -80,7 +88,7 @@ import Foundation
         guard let queryItem = queryItem else {
             return nil
         }
-        return RequestBuilder.createRequest(with: url, headers: headers, path: path, queryItems: queryItem, methot: methot)
+        return APIRequestBuilder.createRequest(with: url, headers: headers, path: path, queryItems: queryItem, methot: methot)
     }
     
 }
