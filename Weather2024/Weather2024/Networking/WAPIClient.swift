@@ -23,8 +23,8 @@ final class WAPIClient{
     ///   - responseError: responseError
     ///   - responseParser: responseParser
     ///   - wNetworkLogger: wNetworkLogger
-    private init(
-        urlSessionProvider: URLSessionProvider = URLSessionProvider(),
+     init(
+        urlSessionProvider: URLSessionProvider = URLSessionProvider(urlSession: .shared),
         responseError: ResponseError = ResponseError(),
         responseParser: ResponseParser = ResponseParser(),
         wNetworkLogger: WNetworkLogger = WNetworkLogger.shared
@@ -49,10 +49,12 @@ final class WAPIClient{
         wNetworkLogger.log(request: request)
         urlSessionProvider.fethData(urlRequest: request) {[weak self] data, response, error in
             if error != nil{
+                print(1111)
                 completion(.failure(NetworkError.invalidResponse))
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else {
+                print(2222)
                 completion(.failure(NetworkError.invalidResponse))
                 return
             }

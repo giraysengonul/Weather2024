@@ -10,8 +10,17 @@ import Foundation
 /// Single URLSessionProvider
 final class URLSessionProvider: NetworkingProtocol {
     
+    private let urlSession: URLSession
+    
     /// Init
-      init() {}
+    /// - Parameter urlSession: URLSession
+    init
+    (
+        urlSession: URLSession = .shared
+    )
+    {
+        self.urlSession = urlSession
+    }
     
     /// Fetch Data Processing
     /// - Parameters:
@@ -19,7 +28,7 @@ final class URLSessionProvider: NetworkingProtocol {
     ///   - completion: Data or URLResponse or Error
     /// - Returns: URLSessionDataTask
     public func fethData(urlRequest request: URLRequest, completion: @escaping(Data?, URLResponse?, Error? ) -> Void) -> URLSessionDataTask{
-        return URLSession.shared.dataTask(with: request, completionHandler: completion)
+        return urlSession.dataTask(with: request, completionHandler: completion)
     }
     
 }

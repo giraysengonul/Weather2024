@@ -25,7 +25,7 @@ final class WeatherService: WeatherServiceProtocol{
     /// - Parameters:
     ///   - endPoint: WEndpoint
     ///   - completion: Weather(Model) or Error
-    public func fetchWeather(endPoint: WEndpoint, completion: @escaping(Result<Weather,Error>)->Void){
+    public func fetchWeather(endPoint: WEndpoint ,completion: @escaping(Result<Weather,Error>)->Void){
         
         apiClient.fetchData(endPoint, parsingModel: Weather.self) { result in
             switch result {

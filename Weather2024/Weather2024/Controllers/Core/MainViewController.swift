@@ -13,14 +13,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .red
         let endPoint = WEndpoint.locationWeatherFetchData( query: [URLQueryItem(name: "data.lang", value: "tr"), URLQueryItem(name: "data.city", value: "kayseri")])
-        WeatherService().fetchWeather(endPoint: endPoint) { result in
-            switch result {
-            case .success(let success):
-                break
-            case .failure(let failure):
-                break
-            }
-        }
+//        WeatherService().fetchWeather(endPoint: endPoint) { result in
+//            switch result {
+//            case .success(let success):
+//                break
+//            case .failure(let failure):
+//                break
+//            }
+//        }
     }
 
 
